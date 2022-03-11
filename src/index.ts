@@ -1,3 +1,6 @@
+// import dotenv from 'dotenv';
+
+// dotenv.config();
 // export { Blah as default } from './lib'
 
 
@@ -9,3 +12,9 @@ export *  from './methods/index';
 
 // INTERFACE
 export * from './interfaces/index';
+
+// CONSTANTS
+export * from './constants/index'
+
+// SERVICES
+export * from './api_service/index';
