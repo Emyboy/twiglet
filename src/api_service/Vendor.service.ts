@@ -12,4 +12,10 @@ export class VendorService {
     });
     return res;
   }
+
+  static async findVendorBySubdomain(subdomain:string):Promise<AxiosResponse>{
+    const res = await axios(API_URL+`/api/vendors/?subdomain=${subdomain}`);
+    return res;
+  }
+   
 }

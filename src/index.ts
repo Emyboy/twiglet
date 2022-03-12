@@ -18,3 +18,6 @@ export * from './constants/index'
 
 // SERVICES
 export * from './api_service/index';
+
+// HELPERS
+export * from './helpers/index'
