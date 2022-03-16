@@ -9,6 +9,9 @@ export interface Vendor {
   about: string;
   subdomain: string;
   verified?: boolean;
+  country: string;
+
+  owner: string;
 
   // Dates
   createdAt?: string;
