@@ -1,5 +1,16 @@
 export interface GoogleLocation {
-    label: string;
+  label: string;
+}
+
+export interface VendorCategory {
+  id: string | number;
+  attributes: {
+    name: string;
+    image_url?: string;
+    slug: string;
+    example?: string;
+    description?: string;
+  };
 }
 
 export interface Vendor {
@@ -11,7 +22,7 @@ export interface Vendor {
   verified?: boolean;
   country: string;
 
-  owner: string;
+  owner: string | number;
 
   // Dates
   createdAt?: string;
