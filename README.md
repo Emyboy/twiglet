@@ -1,57 +1,29 @@
 # Twiglet
 
-A package for Twigtrader
+This is a suite of tools used for my private vendor application
 
 ## Usage
 
 ```bash
-yarn add twiglet
+yarn add twiglet or npm install twiglet
 ```
 
-Use Picache the same way you would use an `<Image />` component.
+Error Handling Example
 
 ```js
-import Picache from "picache";
+import { StrapiError } from "twiglet";
 
-const App = () => (
-    <Picache
-      style={{ height: 200, width: 200 }}
-      source={{ uri: "http://via.placeholder.com/200x200" }}
-    />
-);
+module.exports = createCoreController("api::vendor.vendor", ({ strapi }) => ({
+  async create(ctx) {
+    try {
+      const body = ctx.request.body.data;
+      const newStore = await strapi.service("api::vendor.vendor").create(body)
+      return ctx.send(newStore, 200);
+    } catch (error) {
+      // Use the StrapiError handler here
+      return new StrapiError(ctx, "Something don sup ooo", {service: 'paypal' }).PaymentRequired()
+    }
+  },
+}));
 ```
 
-
-```js
-import Picache from "picache";
-
-const App = () => (
-     <Picache
-        style={{ height: 150, width: 350 }}
-        source={require("./square.png")}
-      />
-);
-```
-
-
-```js
-import Picache from "picache";
-
-const App = () => (
-      <Picache
-        style={{ height: 50, width: 50 }}
-        source={[
-          {
-            uri: "http://via.placeholder.com/25x25",
-            height: 25,
-            width: 25
-          },
-          {
-            uri: "http://via.placeholder.com/50x50",
-            height: 50,
-            width: 50
-          }
-        ]}
-      />
-);
-```
