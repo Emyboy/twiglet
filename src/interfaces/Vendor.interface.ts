@@ -14,6 +14,7 @@ export interface VendorCategory {
 }
 
 export interface Vendor {
+  id: number;
   name: string;
   location: string;
   google_location: GoogleLocation;

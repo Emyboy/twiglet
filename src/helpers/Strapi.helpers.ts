@@ -21,9 +21,9 @@ export class StrapiError {
         }
     }
 
-    serverError(): void {
+    serverError(report: string): void {
         if (this.ctx) {
-            //Todo: Save error log
+            //Todo: Save error log with report
             return this.ctx.internalServerError(this.errorMessage, this.errorDetails);
         }
     }
